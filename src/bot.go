@@ -15,13 +15,13 @@ type Slackparams struct {
 
 func main() {
     params := Slackparams{
-		tokenID:   "aaaaa",
-		botID:     "<@bbbbb>",
-		channelID: "ccccc",
-	}
+        tokenID:   "aaaaa",
+        botID:     "<@bbbbb>",
+        channelID: "ccccc",
+    }
 
-	api := slack.New(params.tokenID)
-	params.rtm = api.NewRTM()
+    api := slack.New(params.tokenID)
+    params.rtm = api.NewRTM()
     go rtm.ManageConnection()
 
     for msg := range rtm.IncomingEvents {
