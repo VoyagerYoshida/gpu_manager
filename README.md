@@ -28,7 +28,7 @@ Slack の App から Bots の追加を行い, API Token を取得してくださ
 ```go
 params := Slackparams{
     tokenID:   "aaaaa",     // Slack の API Token
-    botID:     "<@bbbbb>",  // bot の名前
+    keyword:   "<@bbbbb>",  // Bot が起動するためのキーワード ( e.g. グループ名 )
     channelID: "ccccc",     // 使用する channel の名前
 }
 ```

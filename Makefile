@@ -7,7 +7,7 @@ build:
 
 .PHONY: run
 run:
-	@docker run -d --name $(CONTAINER_NAME) $(IMAGE_NAME) 
+	@docker run -d --gpus=all --name=$(CONTAINER_NAME) $(IMAGE_NAME) 
 
 .PHONY: stop
 stop:
