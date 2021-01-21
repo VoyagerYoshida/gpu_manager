@@ -29,10 +29,21 @@ Slack の App から Bots の追加を行い, API Token を取得してくださ
 params := Slackparams{
     tokenID:   "aaaaa",     // Slack の API Token
     keyword:   "bbbbb",  // Bot が起動するためのキーワード ( e.g. グループ名 )
-    channelID: "ccccc",     // 使用する channel の名前
+    channelID: "ccccc",     // 使用する channel の ID
 }
 ```
 
+
+## 実行例
+今回の例では, 2 つのグループが合計 3 台のサーバを所有しているケースで実行しました. 
+各グループのサーバの構成は以下の通りです. 
+
+- Group-X : Server-A (GeForce RTX 3090)
+- Group-Y : Server-B (GeForce GTX 1080, GeForce GTX 1080 Ti), Server-C (GeForce RTX 3070)
+
+keyword (group-x, group-y) をそれぞれ入力すると, このような応答が得られます. 
+
+![result-img](./assets/result.png)
 
 ## コマンド
 
