@@ -9,10 +9,10 @@ import (
 )
 
 type Slackparams struct {
-	tokenID   string
-	keyword   string
-	channelID string
-	rtm       *slack.RTM
+    tokenID   string
+    keyword   string
+    channelID string
+    rtm       *slack.RTM
 }
 
 
@@ -31,13 +31,14 @@ func main() {
         switch ev := msg.Data.(type) {
             case *slack.MessageEvent:
                 if strings.EqualFold(ev.Msg.Text, params.keyword) && ev.Channel == params.channelID {
-                    out, _ := exec.Command(
-                        "nvidia-smi",
-                        "--query-gpu=index,name,memory.total,memory.used",
-                        "--format=csv,noheader,nounits").Output()
+                    out, _ := exec.Command("nvidia-smi",
+                                           "--query-gpu=index,name,memory.total,memory.used",
+                                           "--format=csv,noheader,nounits").Output()
                     reader := csv.NewReader(strings.NewReader(string(out)))
+
                     for {
                         info, err := reader.Read()
+
                         if err != nil {
                             break
                         }
