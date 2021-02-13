@@ -1,4 +1,4 @@
-IMAGE_NAME := go/bot/sample
+IMAGE_NAME := voyagerwy130/gpu-management:1.0
 CONTAINER_NAME := ctn_bot
 
 .PHONY: build
